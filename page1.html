@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+  <script>
+    var width = 500;
+    var height = 500;
+
+    var svg = d3.select("body")
+      .append("svg")
+      .attr("width",width)
+      .attr("height",height)
+      .style("border", "1px solid #000000");
+
+  </script>
+  	<pre>	
+  		In the great green room
+		There was a telephone
+		And a red balloon
+		And a picture of
+
+		The cow jumping over the moon
+	</pre>
+
+	<button class="lastPageButton"><-</button>
+	<button class="nextPageButton">-></button>
+
+	<script>
+		let lastPageButton = d3.select(".lastPageButton")
+			.on("click", function() {
+				window.location="index.html";
+			});
+		let nextPageButton = d3.select(".nextPageButton")
+			.on("click", function() {
+				window.location="page2.html";
+			});
+	</script>
+</body>
+</html>

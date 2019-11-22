@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+  <script>
+    var width = 500;
+    var height = 500;
+
+    var svg = d3.select("body")
+      .append("svg")
+      .attr("width",width)
+      .attr("height",height)
+      .style("border", "1px solid #000000");
+
+  </script>
+  	<pre>	
+  		And there were three little bears sitting on chairs
+		And two little kittens
+		And a pair of mittens
+		And a little toy house
+		And a young mouse
+		And a comb and a brush and a bowl full of mush
+		And a quiet old lady who was whispering “hush”
+	</pre>
+
+	<button class="lastPageButton"><-</button>
+	<button class="nextPageButton">-></button>
+
+	<script>
+		let lastPageButton = d3.select(".lastPageButton")
+			.on("click", function() {
+				window.location="page1.html";
+			});
+		let nextPageButton = d3.select(".nextPageButton")
+			.on("click", function() {
+				window.location="page2.html";
+			});
+	</script>
+</body>
+</html>
