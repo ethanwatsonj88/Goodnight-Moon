@@ -6,8 +6,8 @@
 <body>
   <script>
     
-	var width = 500;
-    var height = 500;
+	var width = 1366;
+    var height = 768;
 
     var svg = d3.select("body")
       .append("svg")
@@ -47,11 +47,21 @@
 			.attr("y", height / 3)
 			.attr("width", 50)
 			.attr("height", 50)
-			.attr("id", "test")
-			.style("opacity", 1);
+			.attr("id", "page0")
+			.style("opacity", 0);
 			//.attr("visibility", "hidden");
 
-	listOfPages.append(telephone);
+			let COW = svg.append("rect")
+			.attr("x", width / 3)
+			.attr("y", height / 3)
+			.attr("width", 50)
+			.attr("height", 50)
+			.attr("id", "page1")
+			.attr("fill", "#FFFFFF")
+			.style("opacity", 0);
+			//.attr("visibility", "hidden");
+
+	listOfPages.push(telephone);
 	
 
 	let lastPageButton = d3.select(".lastPageButton")
@@ -61,7 +71,8 @@
 	let nextPageButton = d3.select(".nextPageButton")
 		.on("click", function() {
 			// show what count we are on in list
-			telephone.transition,duration(900).style("visibility", "hidden");
+			
+			d3.select("#page" + counter).style("opacity", 1);
 			counter = counter + 1;
 
 		});
