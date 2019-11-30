@@ -1,3 +1,21 @@
 body {
-	font-family: sans-serif;
+	font-family: ff-ernestine-pro,serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 30px;
+	margin: 10px;
+}
+h1 {
+	margin: 10px;
+	font-size: 36px;
+}
+h3 {
+	margin: 10px;
+	font-size: 16px;
+}
+
+#booktext {
+	margin: 10px;
+	font-size: 42px;
+
 }

@@ -2,6 +2,11 @@
 <html>
 <head>
   <script src="https://d3js.org/d3.v5.min.js"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/qfs6fck.css">
+
+
+  <link rel="stylesheet" type="text/css" href="theme.css">
+
 </head>
 <body>
   <script>
@@ -20,7 +25,7 @@
     // let drawing = [];
     
       var notepad = svg.append("rect")
-	    .attr("x", width/4)
+	    .attr("x", 0)
 	    .attr("y", 0)
 	    .attr("width", width)
 	    .attr("height", height)
@@ -29,9 +34,9 @@
 	    .attr("stroke-width",2);
 
   </script>
-  	<pre>	
+  	<p id="booktext">	
   		In the great green room
-	</pre>
+	</p>
 
 	<button class="lastPageButton"><-</button>
 	<button class="nextPageButton">-></button>
@@ -40,8 +45,33 @@
 
 	let counter = 0;
 
-	let listOfPages = [];
+	let listOfBookText = ["There was a telephone", 
+	"And a red balloon", 
+	"And a picture of the cow",
+	"Jumping over the moon", 
+	"Goodnight moon", 
+	"Goodnight cow jumping over the moon", 
+	"Goodnight red balloon", 
+	"Goodnight telephone", 
+	"Goodnight great green room"];
+
+
+	//let listOfPages = [];
 		//data goes here
+		// let telephofdne = svg.append("rect")
+		// 	.attr("x", width / 4)
+		// 	.attr("y", height / 3)
+		// 	.attr("width", 50)
+		// 	.attr("height", 50)
+		// 	.attr("id", "page0")
+		// 	.style("opacity", 1)
+		// .on("mouseover", function () {
+		// 		console.log(":whefa")
+	 //          d3.select(this).transition()
+	 //               .duration('50')
+	 //               .attr('opacity', '0');
+  //              });;
+
 		let telephone = svg.append("rect")
 			.attr("x", width / 4)
 			.attr("y", height / 3)
@@ -49,9 +79,8 @@
 			.attr("height", 50)
 			.attr("id", "page0")
 			.style("opacity", 0);
-			//.attr("visibility", "hidden");
 
-			let COW = svg.append("rect")
+		let balloon = svg.append("rect")
 			.attr("x", width / 3)
 			.attr("y", height / 3)
 			.attr("width", 50)
@@ -59,9 +88,72 @@
 			.attr("id", "page1")
 			.attr("fill", "#FFFFFF")
 			.style("opacity", 0);
-			//.attr("visibility", "hidden");
 
-	listOfPages.push(telephone);
+		let cow = svg.append("rect")
+			.attr("x", width / 3)
+			.attr("y", height / 3)
+			.attr("width", 100)
+			.attr("height", 50)
+			.attr("id", "page2")
+			.attr("fill", "#FFFFFF")
+			.style("opacity", 0);
+
+		let moon = svg.append("rect")
+			.attr("x", width / 3)
+			.attr("y", height / 3)
+			.attr("width", 150)
+			.attr("height", 50)
+			.attr("id", "page3")
+			.attr("fill", "#FFFFFF")
+			.style("opacity", 0);
+
+		let moonGlow = svg.append("circle")
+			.attr("cx", 200)
+			.attr("cy", height / 3)
+			.attr("r", 70)
+			.attr("width", 70)
+			.attr("fill", "yellow")
+			.attr("id", "page4")
+			.style("opacity", 0);
+
+		let cowGlow = svg.append("circle")
+			.attr("cx", 100)
+			.attr("cy", height / 3)
+			.attr("r", 70)
+			.attr("width", 70)
+			.attr("fill", "yellow")
+			.attr("id", "page5")
+			.style("opacity", 0);
+
+		let balloonGlow = svg.append("circle")
+			.attr("cx", width / 4)
+			.attr("cy", height / 3)
+			.attr("r", 70)
+			.attr("width", 70)
+			.attr("fill", "yellow")
+			.attr("id", "page6")
+			.style("opacity", 0);
+
+		let telephoneGlow = svg.append("circle")
+			.attr("cx", width / 4)
+			.attr("cy", height / 3)
+			.attr("r", 70)
+			.attr("width", 70)
+			.attr("fill", "yellow")
+			.attr("id", "page7")
+			.style("opacity", 0);
+
+		let roomNoGlow = svg.append("rect")
+			.attr("x", 0)
+			.attr("y", 0)
+			.attr("width", 1366)
+			.attr("height", 768)
+			.attr("id", "page8")
+			.attr("fill", "#000000")
+			.style("opacity", 0);
+
+
+	//listOfPages.push(telephone);
 	
 
 	let lastPageButton = d3.select(".lastPageButton")
@@ -70,12 +162,34 @@
 		});
 	let nextPageButton = d3.select(".nextPageButton")
 		.on("click", function() {
+			let opacityChange;
 			// show what count we are on in list
-			
-			d3.select("#page" + counter).style("opacity", 1);
+			if (counter < 4 ) {
+				opacityChange = 1;
+
+			} else if (counter == 4) {
+				opacityChange = 0.5;
+			}
+			else {
+				opacityChange = 0.5;
+				d3.select("#page" + (counter - 1)).transition().style("opacity", 0);	
+			}
+			d3.select("#page" + counter).transition().style("opacity", opacityChange);
+			d3.select("#page" + counter).on('mouseover', function () {
+				console.log(":whefa")
+	          d3.select(this).transition()
+	               .duration('50')
+	               .attr('opacity', '0');
+               });
+
+				// change book text
+				d3.select("#booktext").text(listOfBookText[counter]);
 			counter = counter + 1;
 
 		});
+
+
+		// TODO : transitions, styling, actual svgs, hoverin goodnights
 	</script>
 </body>
 </html>
