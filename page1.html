@@ -384,7 +384,7 @@
         .style("opacity", 0);
 
 		var dataset = [
-      {x: 1200, y: 520, r: 60, id: 0},  // telelphone glow
+      {x: 1205, y: 520, r: 60, id: 0},  // telelphone glow
       {x: 320, y: 110, r: 100, id: 1}, // ballooon glow
       {x: 785, y: 180, r: 90, id: 2}, // cow
       {x: 650, y: 295, r: 70, id: 3} //moon
@@ -436,13 +436,13 @@
 			}
 			else {
 				opacityChange = 0.5;
-				d3.select("#glow" + (counter - 5)).transition().style("opacity", 0);
+				d3.select("#glow" + (8 - counter)).transition().style("opacity", 0);
 
 			}
 				
 
 			d3.selectAll("#page" + counter).transition().style("opacity", opacityChange);
-      d3.selectAll("#glow" + (counter - 4)).transition().style("opacity", 0.5);
+      		d3.selectAll("#glow" + (7 - counter)).transition().style("opacity", 0.5);
 
 			
 
