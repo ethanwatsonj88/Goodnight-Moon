@@ -19,3 +19,11 @@ h3 {
 	font-size: 42px;
 
 }
+
+svg {
+	pointer-events: all;
+}
+
+div {
+	align-content: center;
+}
