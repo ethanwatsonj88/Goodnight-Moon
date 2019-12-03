@@ -10,14 +10,233 @@
 <body>
 	<script>
     var width = 1366;
-    var height = 768;
+      var height = 768;
 
-    var svg = d3.select("body")
-      .append("svg")
-      .attr("width",width)
-      .attr("height",height)
-      .style("border", "1px solid #000000");
+      var svg = d3.select("body")
+        .append("svg")
+        .attr("width",width)
+        .attr("height",height);
 
+//Green room
+      var room = svg.append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", width)
+        .attr("height", height)
+        .attr("fill","darkblue")
+        .attr("stroke","none");
+
+//Cow jumping
+      var cow = svg.append("rect")
+        .attr("x", 750)
+        .attr("y", 220)
+        .attr("width", 30)
+        .attr("height", 80)
+        .attr("fill","white")
+        .attr("transform","translate(310,-380), rotate(45)");
+
+      var cow = svg.append("rect")
+        .attr("x", 750)
+        .attr("y", 220)
+        .attr("width", 30)
+        .attr("height", 80)
+        .attr("fill","white")
+        .attr("transform","translate(315,-370), rotate(45)");
+
+      var cow = svg.append("rect")
+      .attr("x", 750)
+      .attr("y", 220)
+      .attr("width", 80)
+      .attr("height", 30)
+      .attr("fill","white")
+      .attr("transform","translate(530,-380), rotate(45)");
+
+    var cow = svg.append("rect")
+      .attr("x", 750)
+      .attr("y", 220)
+      .attr("width", 80)
+      .attr("height", 30)
+      .attr("fill","white")
+      .attr("transform","translate(525,-370), rotate(45)");
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 800)
+        .attr("cy", 300)
+        .attr("rx", 140)
+        .attr("ry", 60)
+        .attr("fill","white");
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 720)
+        .attr("cy", 300)
+        .attr("rx", 20)
+        .attr("ry", 25)
+        .attr("fill","black");
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 740)
+        .attr("cy", 310)
+        .attr("rx", 30)
+        .attr("ry", 20)
+        .attr("fill","black");
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 860)
+        .attr("cy", 330)
+        .attr("rx", 25)
+        .attr("ry", 15)
+        .attr("fill","black");
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 880)
+        .attr("cy", 310)
+        .attr("rx", 25)
+        .attr("ry", 30)
+        .attr("fill","black");
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 815)
+        .attr("cy", 275)
+        .attr("rx", 35)
+        .attr("ry", 30)
+        .attr("fill","black");
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 640)
+        .attr("cy", 170)
+        .attr("rx", 30)
+        .attr("ry", 20)
+        .attr("fill","pink");
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 760)
+        .attr("cy", 170)
+        .attr("rx", 30)
+        .attr("ry", 20)
+        .attr("fill","pink");
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 700)
+        .attr("cy", 210)
+        .attr("rx", 50)
+        .attr("ry", 60)
+        .attr("fill","white");
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 700)
+        .attr("cy", 240)
+        .attr("rx", 60)
+        .attr("ry", 40)
+        .attr("fill","pink");
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 680)
+        .attr("cy", 190)
+        .attr("rx", 6)
+        .attr("ry", 12)
+        .attr("fill", "black");
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 720)
+        .attr("cy", 190)
+        .attr("rx", 6)
+        .attr("ry", 12)
+        .attr("fill", "black");
+
+      var cow = svg.append("line")
+        .attr("x1", 920)
+        .attr("y1", 280)
+        .attr("x2", 1010)
+        .attr("y2", 240)
+        .attr("stroke","white")
+        .attr("stroke-width",6);
+
+      var cow = svg.append("ellipse")
+        .attr("cx", 1020)
+        .attr("cy", 245)
+        .attr("rx", 20)
+        .attr("ry", 10)
+        .attr("fill","white");
+
+//Moon
+      var moon = svg.append("circle")
+        .attr("cx", 350)
+        .attr("cy", 450)
+        .attr("r", 180)
+        .attr("fill","yellow");
+
+      var moon = svg.append("circle")
+        .attr("cx", 450)
+        .attr("cy", 400)
+        .attr("r", 150)
+        .attr("fill","darkblue");
+
+//Stars
+      var star = svg.append("circle")
+        .attr("cx", 1150)
+        .attr("cy", 150)
+        .attr("r", 5)
+        .attr("fill","white");
+
+      var star = svg.append("circle")
+        .attr("cx", 350)
+        .attr("cy", 700)
+        .attr("r", 5)
+        .attr("fill","white");
+
+      var star = svg.append("circle")
+        .attr("cx", 850)
+        .attr("cy", 50)
+        .attr("r", 5)
+        .attr("fill","white");
+
+      var star = svg.append("circle")
+        .attr("cx", 550)
+        .attr("cy", 350)
+        .attr("r", 5)
+        .attr("fill","white");
+
+      var star = svg.append("circle")
+        .attr("cx", 80)
+        .attr("cy", 200)
+        .attr("r", 5)
+        .attr("fill","white");
+
+      var star = svg.append("circle")
+        .attr("cx", 1060)
+        .attr("cy", 600)
+        .attr("r", 5)
+        .attr("fill","white");
+
+      var star = svg.append("circle")
+        .attr("cx", 720)
+        .attr("cy", 500)
+        .attr("r", 5)
+        .attr("fill","white");
+
+      var star = svg.append("circle")
+        .attr("cx", 70)
+        .attr("cy", 700)
+        .attr("r", 5)
+        .attr("fill","white");
+
+      var star = svg.append("circle")
+        .attr("cx", 1170)
+        .attr("cy", 480)
+        .attr("r", 5)
+        .attr("fill","white");
+
+      var star = svg.append("circle")
+        .attr("cx", 420)
+        .attr("cy", 69)
+        .attr("r", 5)
+        .attr("fill","white");
+
+      var star = svg.append("circle")
+        .attr("cx", 670)
+        .attr("cy", 680)
+        .attr("r", 5)
+        .attr("fill","white");
   	</script>
 
 	<h1>Goodnight Moon</h1>
